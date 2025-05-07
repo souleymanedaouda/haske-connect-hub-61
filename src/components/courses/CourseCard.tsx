@@ -13,40 +13,22 @@ interface CourseCardProps {
   modules: number;
   progress?: number;
   image?: string;
-  category: string;
 }
 
-const CourseCard = ({ 
-  id, 
-  title, 
-  description, 
-  instructor, 
-  level, 
-  duration, 
-  modules, 
-  progress = 0, 
-  image,
-  category 
-}: CourseCardProps) => {
-  
-  // Generate a consistent image for each course based on its category and ID
-  const getCourseImage = () => {
-    return image || `https://source.unsplash.com/random/600x400?${category.toLowerCase()},learning,africa`;
-  };
-
+const CourseCard = ({ id, title, description, instructor, level, duration, modules, progress = 0, image }: CourseCardProps) => {
   return (
     <Card className="haske-card h-full flex flex-col">
-      <div className="relative h-48">
-        <img 
-          src={getCourseImage()} 
-          alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={(e) => {
-            // Fallback image if loading fails
-            e.currentTarget.src = `https://source.unsplash.com/random/600x400?course,${id}`;
+      <div className="relative h-40">
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ 
+            backgroundImage: image 
+              ? `url(${image})` 
+              : `url(https://source.unsplash.com/random/400x200?course,${id})`
           }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+        </div>
         
         <div className="absolute bottom-3 left-3 bg-white px-2 py-1 rounded text-xs font-medium text-haske-dark-orange">
           {level}

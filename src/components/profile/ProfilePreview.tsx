@@ -21,8 +21,7 @@ const ProfilePreview = () => {
     currentLearning: {
       course: "Marketing Digital pour Entrepreneurs",
       progress: 65
-    },
-    profileImage: "https://source.unsplash.com/random/300x300?portrait,african,woman,professional"
+    }
   };
 
   return (
@@ -30,12 +29,8 @@ const ProfilePreview = () => {
       <div className="h-32 bg-gradient-to-r from-haske-orange to-haske-yellow"></div>
       <div className="px-6 pt-0 pb-6">
         <div className="flex flex-col md:flex-row md:items-end -mt-16 mb-4">
-          <div className="h-32 w-32 rounded-full border-4 border-white bg-haske-light-brown flex items-center justify-center text-white overflow-hidden">
-            {user.profileImage ? (
-              <img src={user.profileImage} alt={user.name} className="h-full w-full object-cover" />
-            ) : (
-              <User className="h-16 w-16" />
-            )}
+          <div className="h-32 w-32 rounded-full border-4 border-white bg-haske-light-brown flex items-center justify-center text-white">
+            <User className="h-16 w-16" />
           </div>
           <div className="mt-4 md:mt-0 md:ml-6 md:mb-4">
             <h2 className="text-2xl font-bold">{user.name}</h2>
