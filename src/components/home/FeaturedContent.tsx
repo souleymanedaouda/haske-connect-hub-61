@@ -12,21 +12,33 @@ const FeaturedContent = () => {
       title: "L'importance de la technologie dans l'entrepreneuriat africain",
       description: "Découvrez comment les entrepreneurs africains utilisent la technologie pour résoudre des problèmes locaux.",
       category: "Inspiration",
-      imageIndex: 1
+      image: "https://source.unsplash.com/random/800x600?africa,tech,entrepreneurship",
+      author: {
+        name: "Kofi Mensah",
+        image: "https://source.unsplash.com/random/100x100?african,man,professional"
+      }
     },
     {
       id: 2,
       title: "5 compétences essentielles pour réussir dans le numérique",
       description: "Les compétences techniques et soft skills que tout jeune africain devrait développer.",
       category: "Éducation",
-      imageIndex: 2
+      image: "https://source.unsplash.com/random/800x600?skills,digital,africa",
+      author: {
+        name: "Fatou Ndiaye",
+        image: "https://source.unsplash.com/random/100x100?african,woman,professional"
+      }
     },
     {
       id: 3,
-      title: "L'histoire de success de Khadija, développeuse web autodidacte",
+      title: "L'histoire de succès de Khadija, développeuse web autodidacte",
       description: "Comment une jeune passionnée est devenue développeuse en moins d'un an.",
       category: "Success Story",
-      imageIndex: 3
+      image: "https://source.unsplash.com/random/800x600?coding,woman,africa",
+      author: {
+        name: "Aïcha Diallo",
+        image: "https://source.unsplash.com/random/100x100?african,woman,writer"
+      }
     }
   ];
   
@@ -73,10 +85,16 @@ const FeaturedContent = () => {
               <div key={slide.id} className="min-w-full">
                 <Card className="haske-card">
                   <div className="md:grid md:grid-cols-2">
-                    <div className="bg-gradient-to-br from-haske-orange to-haske-yellow h-64 md:h-auto">
-                      <div className="h-full w-full bg-cover bg-center opacity-80" 
-                           style={{ backgroundImage: `url('https://source.unsplash.com/random/600x400?african,tech,${slide.imageIndex}')` }}>
-                      </div>
+                    <div className="h-64 md:h-auto overflow-hidden">
+                      <img 
+                        src={slide.image} 
+                        alt={slide.title} 
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback if image fails to load
+                          e.currentTarget.src = `https://source.unsplash.com/random/600x400?african,tech,${slide.id}`;
+                        }}
+                      />
                     </div>
                     <CardContent className="p-6 md:p-8 flex flex-col justify-between">
                       <div>
@@ -88,8 +106,17 @@ const FeaturedContent = () => {
                       </div>
                       <div className="mt-6 flex justify-between items-center">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 rounded-full bg-haske-light-brown"></div>
-                          <span className="ml-2 text-sm font-medium">Par l'équipe Haské</span>
+                          <div className="h-8 w-8 rounded-full bg-haske-light-brown overflow-hidden">
+                            <img 
+                              src={slide.author.image} 
+                              alt={slide.author.name} 
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.src = "https://source.unsplash.com/random/100x100?person";
+                              }}
+                            />
+                          </div>
+                          <span className="ml-2 text-sm font-medium">Par {slide.author.name}</span>
                         </div>
                         <button className="text-haske-orange font-medium hover:text-haske-dark-orange transition-colors">
                           Lire plus

@@ -13,19 +13,22 @@ interface CommunityCardProps {
 }
 
 const CommunityCard = ({ id, name, description, members, topics, image }: CommunityCardProps) => {
+  // Generate a consistent image for each community based on its ID
+  const getImageUrl = () => {
+    const categories = ['tech', 'business', 'education', 'africa', 'innovation', 'community'];
+    const category = categories[id % categories.length];
+    return image || `https://source.unsplash.com/random/600x400?${category},africa`;
+  };
+
   return (
     <Card className="haske-card h-full flex flex-col">
-      <div className="relative h-36">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ 
-            backgroundImage: image 
-              ? `url(${image})` 
-              : 'url(https://source.unsplash.com/random/400x200?africa,tech)'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        </div>
+      <div className="relative h-48">
+        <img 
+          src={getImageUrl()} 
+          alt={name}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <div className="absolute bottom-4 left-4 flex items-center text-white">
           <Users className="h-4 w-4 mr-1" />
           <span className="text-sm">{members} membres</span>

@@ -15,7 +15,8 @@ const coursesData = [
     duration: "12 heures",
     modules: 8,
     progress: 65,
-    category: "Tech"
+    category: "Tech",
+    image: "https://source.unsplash.com/random/600x400?coding,web,development"
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ const coursesData = [
     duration: "10 heures",
     modules: 6,
     progress: 0,
-    category: "Business"
+    category: "Business",
+    image: "https://source.unsplash.com/random/600x400?marketing,digital,africa"
   },
   {
     id: 3,
@@ -37,7 +39,8 @@ const coursesData = [
     duration: "8 heures",
     modules: 5,
     progress: 0,
-    category: "Design"
+    category: "Design",
+    image: "https://source.unsplash.com/random/600x400?design,thinking,innovation"
   },
   {
     id: 4,
@@ -48,7 +51,8 @@ const coursesData = [
     duration: "15 heures",
     modules: 10,
     progress: 0,
-    category: "Business"
+    category: "Business",
+    image: "https://source.unsplash.com/random/600x400?leadership,team,management"
   },
   {
     id: 5,
@@ -59,7 +63,8 @@ const coursesData = [
     duration: "14 heures",
     modules: 7,
     progress: 0,
-    category: "Tech"
+    category: "Tech",
+    image: "https://source.unsplash.com/random/600x400?ai,artificial,intelligence"
   },
   {
     id: 6,
@@ -70,7 +75,8 @@ const coursesData = [
     duration: "6 heures",
     modules: 4,
     progress: 30,
-    category: "Développement personnel"
+    category: "Développement personnel",
+    image: "https://source.unsplash.com/random/600x400?personal,branding,professional"
   }
 ];
 

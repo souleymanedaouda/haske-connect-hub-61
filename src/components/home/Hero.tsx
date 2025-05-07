@@ -30,12 +30,25 @@ const Hero = () => {
             <div className="relative w-full max-w-lg">
               <div className="absolute top-0 -left-4 w-40 h-40 bg-haske-yellow rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-pulse-light"></div>
               <div className="absolute bottom-0 -right-4 w-40 h-40 bg-haske-orange rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-light"></div>
-              <div className="relative">
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              
+              <div className="relative flex flex-col gap-4">
+                <img 
+                  src="https://source.unsplash.com/random/600x400?african,students,innovation" 
+                  alt="African innovation" 
+                  className="rounded-2xl shadow-xl z-10 object-cover h-56"
+                />
+                
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden relative z-20 -mt-8 ml-8">
                   <div className="h-24 bg-gradient-to-r from-haske-orange to-haske-yellow"></div>
                   <div className="p-6">
                     <div className="flex items-center">
-                      <div className="w-16 h-16 bg-haske-light-brown rounded-full border-4 border-white -mt-12 mr-4"></div>
+                      <div className="w-16 h-16 bg-haske-light-brown rounded-full border-4 border-white -mt-12 mr-4 overflow-hidden">
+                        <img 
+                          src="https://source.unsplash.com/random/100x100?african,entrepreneur" 
+                          alt="Profile" 
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                       <div>
                         <h3 className="font-bold">Chroniques de Haské</h3>
                         <p className="text-sm text-gray-500">Inspiration quotidienne</p>
