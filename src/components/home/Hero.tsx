@@ -1,6 +1,7 @@
 
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -17,12 +18,14 @@ const Hero = () => {
               l'entrepreneuriat, l'innovation et le développement personnel.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="haske-button-primary">
-                Rejoindre une communauté
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button className="haske-button-primary" asChild>
+                <Link to="/community">
+                  Rejoindre une communauté
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button variant="outline" className="haske-button-secondary">
-                Découvrir les formations
+              <Button variant="outline" className="haske-button-secondary" asChild>
+                <Link to="/courses">Découvrir les formations</Link>
               </Button>
             </div>
           </div>
@@ -32,10 +35,18 @@ const Hero = () => {
               <div className="absolute bottom-0 -right-4 w-40 h-40 bg-haske-orange rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse-light"></div>
               <div className="relative">
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                  <div className="h-24 bg-gradient-to-r from-haske-orange to-haske-yellow"></div>
+                  <div className="h-24 bg-gradient-to-r from-haske-orange to-haske-yellow relative overflow-hidden">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-40" 
+                      style={{ backgroundImage: `url('https://source.unsplash.com/featured/600x200?african,tech,innovation')` }}
+                    ></div>
+                  </div>
                   <div className="p-6">
                     <div className="flex items-center">
-                      <div className="w-16 h-16 bg-haske-light-brown rounded-full border-4 border-white -mt-12 mr-4"></div>
+                      <div 
+                        className="w-16 h-16 rounded-full border-4 border-white -mt-12 mr-4 bg-cover bg-center"
+                        style={{ backgroundImage: `url('https://source.unsplash.com/featured/100x100?african,student')` }}
+                      ></div>
                       <div>
                         <h3 className="font-bold">Chroniques de Haské</h3>
                         <p className="text-sm text-gray-500">Inspiration quotidienne</p>

@@ -16,6 +16,19 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ id, title, description, instructor, level, duration, modules, progress = 0, image }: CourseCardProps) => {
+  // Thèmes d'images basés sur l'ID du cours
+  const courseThemes = [
+    "african,coding,tech",
+    "web,development,africa",
+    "digital,marketing,africa",
+    "startup,africa,business",
+    "design,africa,ux",
+    "data,science,africa",
+    "mobile,apps,africa"
+  ];
+  
+  const theme = courseThemes[id % courseThemes.length];
+  
   return (
     <Card className="haske-card h-full flex flex-col">
       <div className="relative h-40">
@@ -24,7 +37,7 @@ const CourseCard = ({ id, title, description, instructor, level, duration, modul
           style={{ 
             backgroundImage: image 
               ? `url(${image})` 
-              : `url(https://source.unsplash.com/random/400x200?course,${id})`
+              : `url(https://source.unsplash.com/featured/600x400?${theme})`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>

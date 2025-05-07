@@ -3,6 +3,7 @@ import { Briefcase, Star, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const marketplaceItems = [
   {
@@ -13,7 +14,7 @@ const marketplaceItems = [
     reviews: 24,
     price: "À partir de 150 000 FCFA",
     category: "Développement",
-    image: "https://source.unsplash.com/random/100x100?web,development"
+    image: "https://source.unsplash.com/featured/100x100?web,developer,african"
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ const marketplaceItems = [
     reviews: 18,
     price: "20 000 FCFA / heure",
     category: "Marketing",
-    image: "https://source.unsplash.com/random/100x100?marketing"
+    image: "https://source.unsplash.com/featured/100x100?marketing,woman,african"
   },
   {
     id: 3,
@@ -33,7 +34,7 @@ const marketplaceItems = [
     reviews: 32,
     price: "300 000 FCFA / formation",
     category: "Formation",
-    image: "https://source.unsplash.com/random/100x100?data,science"
+    image: "https://source.unsplash.com/featured/100x100?data,science,african"
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const marketplaceItems = [
     reviews: 41,
     price: "À partir de 100 000 FCFA",
     category: "Design",
-    image: "https://source.unsplash.com/random/100x100?design,brand"
+    image: "https://source.unsplash.com/featured/100x100?design,african,woman"
   }
 ];
 
@@ -56,8 +57,8 @@ const MarketplacePreview = () => {
             <Briefcase className="mr-2 h-6 w-6" />
             Marketplace
           </h2>
-          <Button variant="link" className="text-haske-orange flex items-center">
-            Voir tout <ChevronRight className="h-4 w-4 ml-1" />
+          <Button variant="link" className="text-haske-orange flex items-center" asChild>
+            <Link to="/marketplace">Voir tout <ChevronRight className="h-4 w-4 ml-1" /></Link>
           </Button>
         </div>
         

@@ -2,6 +2,7 @@
 import { Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface CommunityCardProps {
   id: number;
@@ -55,8 +56,8 @@ const CommunityCard = ({ id, name, description, members, topics, image }: Commun
           </div>
         </div>
         
-        <Button className="w-full haske-gradient" as="a" href={`/community/${id}`}>
-          Rejoindre
+        <Button className="w-full haske-gradient" asChild>
+          <Link to={`/community/${id}`}>Rejoindre</Link>
         </Button>
       </CardContent>
     </Card>

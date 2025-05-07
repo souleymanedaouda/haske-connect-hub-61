@@ -12,21 +12,21 @@ const FeaturedContent = () => {
       title: "L'importance de la technologie dans l'entrepreneuriat africain",
       description: "Découvrez comment les entrepreneurs africains utilisent la technologie pour résoudre des problèmes locaux.",
       category: "Inspiration",
-      imageIndex: 1
+      image: "https://source.unsplash.com/featured/600x400?african,entrepreneur,tech"
     },
     {
       id: 2,
       title: "5 compétences essentielles pour réussir dans le numérique",
       description: "Les compétences techniques et soft skills que tout jeune africain devrait développer.",
       category: "Éducation",
-      imageIndex: 2
+      image: "https://source.unsplash.com/featured/600x400?african,student,coding"
     },
     {
       id: 3,
       title: "L'histoire de success de Khadija, développeuse web autodidacte",
       description: "Comment une jeune passionnée est devenue développeuse en moins d'un an.",
       category: "Success Story",
-      imageIndex: 3
+      image: "https://source.unsplash.com/featured/600x400?african,woman,laptop"
     }
   ];
   
@@ -75,7 +75,7 @@ const FeaturedContent = () => {
                   <div className="md:grid md:grid-cols-2">
                     <div className="bg-gradient-to-br from-haske-orange to-haske-yellow h-64 md:h-auto">
                       <div className="h-full w-full bg-cover bg-center opacity-80" 
-                           style={{ backgroundImage: `url('https://source.unsplash.com/random/600x400?african,tech,${slide.imageIndex}')` }}>
+                           style={{ backgroundImage: `url('${slide.image}')` }}>
                       </div>
                     </div>
                     <CardContent className="p-6 md:p-8 flex flex-col justify-between">
@@ -88,7 +88,8 @@ const FeaturedContent = () => {
                       </div>
                       <div className="mt-6 flex justify-between items-center">
                         <div className="flex items-center">
-                          <div className="h-8 w-8 rounded-full bg-haske-light-brown"></div>
+                          <div className="h-8 w-8 rounded-full bg-cover bg-center" 
+                               style={{ backgroundImage: `url('https://source.unsplash.com/featured/100x100?african,profile,${slide.id}')` }}></div>
                           <span className="ml-2 text-sm font-medium">Par l'équipe Haské</span>
                         </div>
                         <button className="text-haske-orange font-medium hover:text-haske-dark-orange transition-colors">
